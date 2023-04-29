@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理后台</title>
+    <link href="/static/style/admin.css" rel="stylesheet" type="text/css">
+    <script src="/static/js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <H1>红路灯手动操作记录：</H1>
+    <div id="main">
+    </div>
+
+    <H1>视频记录：</H1>
+    <div id="video">
+
+    </div>
+<script>
+    $.ajax({
+        type:'GET',
+        url:'/admin/get',
+        success:function (data){
+            console.log(data['data']);
+            for (var i=0; i<data['data'].length; i++)
+                $('#main').append('<li>'+ data['data'][i][2] + '</li>');
+        }
+    });
+
+    $.ajax({
+        type:'GET',
+        url:'/admin/video',
+        success:function (data){
+            var length = data['data'].length;
+            console.log(data['data']);
+            data['data'].forEach(function (item,index){
+                console.log(item);
+                d = `<li><a href="${item}">${item}</a></li>`;
+                $('#video').append(d);
+            });
+        }
+    });
+
+    //$('#main').append()
+</script>
+</body>
+</html>

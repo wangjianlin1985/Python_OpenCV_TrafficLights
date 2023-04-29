@@ -1,0 +1,25 @@
+body{
+    text-align: center;
+}
+.main{
+    position: relative;
+    min-height: 817px;
+    min-width: 1491px;
+}
+.led{
+    width: 75px;
+    height: 75px;
+    position: absolute;
+}
+.led1{
+    left: 600px;
+    top: 420px;
+}
+.led2{
+    left: 860px;
+    top: 420px;
+}
+.led3{
+    left: 1230px;
+    top: 410px;
+}

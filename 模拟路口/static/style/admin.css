@@ -1,0 +1,6 @@
+body{
+    align-content: center;
+}
+.main{
+    height: calc(50%);
+}
